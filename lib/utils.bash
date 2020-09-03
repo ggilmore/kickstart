@@ -2,17 +2,17 @@
 
 set -euo pipefail
 
-# TODO: Ensure this is the correct GitHub homepage where releases can be downloaded for ds-to-dhall.
-GH_REPO="https://github.com/sourcegraph/ds-to-dhall"
+# TODO: Ensure this is the correct GitHub homepage where releases can be downloaded for mage.
+GH_REPO="https://github.com/magefile/mage"
 
 fail() {
-    echo -e "asdf-ds-to-dhall: $*"
+    echo -e "asdf-mage: $*"
     exit 1
 }
 
 curl_opts=(-fsSL)
 
-# NOTE: You might want to remove this if ds-to-dhall is not hosted on GitHub releases.
+# NOTE: You might want to remove this if mage is not hosted on GitHub releases.
 if [ -n "${GITHUB_API_TOKEN:-}" ]; then
     curl_opts=("${curl_opts[@]}" -H "Authorization: token $GITHUB_API_TOKEN")
 fi
@@ -30,12 +30,25 @@ list_github_tags() {
 
 list_all_versions() {
     # TODO: Adapt this. By default we simply list the tag names from GitHub releases.
-    # Change this function if ds-to-dhall has other means of determining installable versions.
+    # Change this function if mage has other means of determining installable versions.
     list_github_tags
 }
 
 get_platform() {
-    echo "$(uname)_x86_64"
+    local platform
+
+    platform="$(uname)"
+    case $platform in
+    'Linux')
+        platform='Linux'
+        ;;
+    'Darwin')
+        platform='macOS'
+        ;;
+    *) ;;
+    esac
+
+    echo "${platform}-64bit"
 }
 
 download_release() {
@@ -44,10 +57,10 @@ download_release() {
     filename="$2"
     platform=$(get_platform)
 
-    # TODO: Adapt the release URL convention for ds-to-dhall
-    url="$GH_REPO/releases/download/v${version}/ds-to-dhall_${version}_${platform}.tar.gz"
+    # TODO: Adapt the release URL convention for mage
+    url="$GH_REPO/releases/download/v${version}/mage_${version}_${platform}.tar.gz"
 
-    echo "* Downloading ds-to-dhall release $version..."
+    echo "* Downloading mage release $version..."
     curl "${curl_opts[@]}" -o "$filename" -C - "$url" || fail "Could not download $url"
 }
 
@@ -59,11 +72,11 @@ install_version() {
     platform=$(get_platform)
 
     if [ "$install_type" != "version" ]; then
-        fail "asdf-ds-to-dhall supports release installs only"
+        fail "asdf-mage supports release installs only"
     fi
 
     # TODO: Adapt this to proper extension and adapt extracting strategy.
-    local release_file="$install_path/ds-to-dhall_${version}_${platform}.tar.gz"
+    local release_file="$install_path/mage_${version}_${platform}.tar.gz"
     local install_path_bin="${install_path}/bin"
     (
         mkdir -p "$install_path_bin"
@@ -72,16 +85,16 @@ install_version() {
         rm "$release_file"
 
         local tool_cmd
-        tool_cmd="${install_path_bin}/ds-to-dhall"
+        tool_cmd="${install_path_bin}/mage"
         test -x "${tool_cmd}" || fail "Expected ${tool_cmd} to be executable."
 
         if ! "${tool_cmd}" --help; then
             fail "'${tool_cmd} --help' failed."
         fi
 
-        echo "ds-to-dhall $version installation was successful!"
+        echo "mage $version installation was successful!"
     ) || (
         rm -rf "$install_path"
-        fail "An error ocurred while installing ds-to-dhall $version."
+        fail "An error ocurred while installing mage $version."
     )
 }

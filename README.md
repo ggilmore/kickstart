@@ -1,8 +1,8 @@
 <div align="center">
 
-# asdf-ds-to-dhall ![Build](https://github.com/sourcegraph/asdf-ds-to-dhall/workflows/Build/badge.svg) ![Lint](https://github.com/sourcegraph/asdf-ds-to-dhall/workflows/Lint/badge.svg)
+# asdf-mage ![Build](https://github.com/ggilmore/asdf-mage/workflows/Build/badge.svg) ![Lint](https://github.com/ggilmore/asdf-mage/workflows/Lint/badge.svg)
 
-[ds-to-dhall](https://github.com/sourcegraph/ds-to-dhall) plugin for the [asdf version manager](https://asdf-vm.com).
+[mage](https://github.com/magfile/mage) plugin for the [asdf version manager](https://asdf-vm.com).
 
 </div>
 
@@ -24,25 +24,25 @@
 Plugin:
 
 ```shell
-asdf plugin add ds-to-dhall
+asdf plugin add mage
 # or
-asdf plugin add https://github.com/sourcegraph/asdf-ds-to-dhall.git
+asdf plugin add mage https://github.com/ggilmore/asdf-mage.git
 ```
 
-ds-to-dhall:
+mage:
 
 ```shell
 # Show all installable versions
-asdf list-all ds-to-dhall
+asdf list-all mage
 
 # Install specific version
-asdf install ds-to-dhall latest
+asdf install mage latest
 
 # Set a version globally (on your ~/.tool-versions file)
-asdf global ds-to-dhall latest
+asdf global mage latest
 
-# Now ds-to-dhall commands are available
-ds-to-dhall --help
+# Now mage commands are available
+mage --help
 ```
 
 Check [asdf](https://github.com/asdf-vm/asdf) readme for more instructions on how to
@@ -52,8 +52,8 @@ install & manage versions.
 
 Contributions of any kind welcome! See the [contributing guide](contributing.md).
 
-[Thanks goes to these contributors](https://github.com/sourcegraph/asdf-ds-to-dhall/graphs/contributors)!
+[Thanks goes to these contributors](https://github.com/ggilmore/asdf-mage/graphs/contributors)!
 
 # License
 
-See [LICENSE](LICENSE) © [Geoffrey Gilmore](https://github.com/sourcegraph/)
+See [LICENSE](LICENSE) © [Geoffrey Gilmore](https://github.com/ggilmore/)

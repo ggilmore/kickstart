@@ -16,7 +16,7 @@ in  Job::{
         # [ GitHubActions.Step::{
             , name = Some "asdf-plugin-test"
             , uses = Some "asdf-vm/actions/plugin-test@v1.0.0"
-            , `with` = Some (toMap { command = "ds-to-dhall --help" })
+            , `with` = Some (toMap { command = "mage --help" })
             , env = Some
                 (toMap { GITHUB_API_TOKEN = "\${{ secrets.GITHUB_TOKEN }}" })
             }
