@@ -11,6 +11,8 @@ jobs:
               run: "./ci/asdf-add-plugins.sh"
             - name: Install asdf tools versions
               run: "./ci/asdf-install.sh"
+            - name: Install packages
+              run: just install
             - env:
                   GITHUB_API_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
               name: asdf-plugin-test
@@ -33,6 +35,8 @@ jobs:
               run: "./ci/asdf-add-plugins.sh"
             - name: Install asdf tools versions
               run: "./ci/asdf-install.sh"
+            - name: Install packages
+              run: just install
             - name: Check that the CI pipeline definition is up-to-date with the dhall configuration
               run: ci/check-rendered-pipeline-up-to-date.sh
     dhallFormat:
@@ -46,6 +50,8 @@ jobs:
               run: "./ci/asdf-add-plugins.sh"
             - name: Install asdf tools versions
               run: "./ci/asdf-install.sh"
+            - name: Install packages
+              run: just install
             - env:
                   CHECK: "true"
               name: Check that dhall files are formatted
@@ -61,6 +67,8 @@ jobs:
               run: "./ci/asdf-add-plugins.sh"
             - name: Install asdf tools versions
               run: "./ci/asdf-install.sh"
+            - name: Install packages
+              run: just install
             - env:
                   CHECK: "true"
               name: Check that dhall files are linted properly
@@ -76,6 +84,8 @@ jobs:
               run: "./ci/asdf-add-plugins.sh"
             - name: Install asdf tools versions
               run: "./ci/asdf-install.sh"
+            - name: Install packages
+              run: just install
             - name: Check Prettier formatting
               run: ci/check-prettier.sh
     shellcheck:
@@ -89,6 +99,8 @@ jobs:
               run: "./ci/asdf-add-plugins.sh"
             - name: Install asdf tools versions
               run: "./ci/asdf-install.sh"
+            - name: Install packages
+              run: just install
             - name: Lint shell scripts
               run: ci/shellcheck.sh
     shfmt:
@@ -102,6 +114,8 @@ jobs:
               run: "./ci/asdf-add-plugins.sh"
             - name: Install asdf tools versions
               run: "./ci/asdf-install.sh"
+            - name: Install packages
+              run: just install
             - name: Check that scripts are formatted consistently
               run: ci/shfmt.sh
 name: CI

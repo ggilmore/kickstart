@@ -3,6 +3,6 @@
 cd "$(dirname "${BASH_SOURCE[0]}")"/..
 set -euxo pipefail
 
-ci/render-ci-pipeline.sh
+just build
 
 git diff --exit-code .github/workflows/ci.yaml

@@ -13,6 +13,10 @@ let ASDFSteps =
         , name = Some "Install asdf tools versions"
         , run = Some "./ci/asdf-install.sh"
         }
+      , GitHubActions.Step::{
+        , name = Some "Install packages"
+        , run = Some "just install"
+        }
       ]
 
 let Checkout =
