@@ -1,8 +1,8 @@
 <div align="center">
 
-# asdf-mage ![Build](https://github.com/ggilmore/asdf-mage/workflows/Build/badge.svg) ![Lint](https://github.com/ggilmore/asdf-mage/workflows/Lint/badge.svg)
+# asdf-just ![Build](https://github.com/ggilmore/asdf-just/workflows/Build/badge.svg) ![Lint](https://github.com/ggilmore/asdf-just/workflows/Lint/badge.svg)
 
-[mage](https://github.com/magfile/mage) plugin for the [asdf version manager](https://asdf-vm.com).
+[just](https://github.com/casey/just) plugin for the [asdf version manager](https://asdf-vm.com).
 
 </div>
 
@@ -24,25 +24,25 @@
 Plugin:
 
 ```shell
-asdf plugin add mage
+asdf plugin add just
 # or
-asdf plugin add mage https://github.com/ggilmore/asdf-mage.git
+asdf plugin add just https://github.com/ggilmore/asdf-just.git
 ```
 
-mage:
+just:
 
 ```shell
 # Show all installable versions
-asdf list-all mage
+asdf list-all just
 
 # Install specific version
-asdf install mage latest
+asdf install just latest
 
 # Set a version globally (on your ~/.tool-versions file)
-asdf global mage latest
+asdf global just latest
 
-# Now mage commands are available
-mage --help
+# Now just commands are available
+just --help
 ```
 
 Check [asdf](https://github.com/asdf-vm/asdf) readme for more instructions on how to
@@ -52,7 +52,7 @@ install & manage versions.
 
 Contributions of any kind welcome! See the [contributing guide](contributing.md).
 
-[Thanks goes to these contributors](https://github.com/ggilmore/asdf-mage/graphs/contributors)!
+[Thanks goes to these contributors](https://github.com/ggilmore/asdf-just/graphs/contributors)!
 
 # License
 
