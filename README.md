@@ -1,6 +1,6 @@
 <div align="center">
 
-# asdf-just ![Build](https://github.com/ggilmore/asdf-just/workflows/Build/badge.svg) ![Lint](https://github.com/ggilmore/asdf-just/workflows/Lint/badge.svg)
+# asdf-just ![CI](https://github.com/ggilmore/asdf-just/workflows/CI/badge.svg)
 
 [just](https://github.com/casey/just) plugin for the [asdf version manager](https://asdf-vm.com).
 
