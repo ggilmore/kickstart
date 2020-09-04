@@ -36,10 +36,10 @@ just:
 asdf list-all just
 
 # Install specific version
-asdf install just latest
+asdf install just 0.7.2
 
 # Set a version globally (on your ~/.tool-versions file)
-asdf global just latest
+asdf global just 0.7.2
 
 # Now just commands are available
 just --help
