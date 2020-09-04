@@ -10,12 +10,8 @@ let ASDFSteps =
         , run = Some "./ci/asdf-add-plugins.sh"
         }
       , GitHubActions.Step::{
-        , name = Some "Install asdf tools versions"
+        , name = Some "Install asdf tool versions and packages"
         , run = Some "./ci/asdf-install.sh"
-        }
-      , GitHubActions.Step::{
-        , name = Some "Install packages"
-        , run = Some "just install"
         }
       ]
 

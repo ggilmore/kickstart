@@ -12,7 +12,7 @@ in  Job::{
           SetupSteps
         # [ GitHubActions.Step::{
             , name = Some "Check that dhall files are linted properly"
-            , run = Some "scripts/lint.sh"
+            , run = Some "just lint-dhall"
             , env = Some (toMap { CHECK = "true" })
             }
           ]

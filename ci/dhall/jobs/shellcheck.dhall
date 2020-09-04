@@ -12,7 +12,7 @@ in  Job::{
           SetupSteps
         # [ GitHubActions.Step::{
             , name = Some "Lint shell scripts"
-            , run = Some "ci/shellcheck.sh"
+            , run = Some "just shellcheck"
             }
           ]
     }

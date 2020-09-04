@@ -12,7 +12,7 @@ in  Job::{
           SetupSteps
         # [ GitHubActions.Step::{
             , name = Some "Check that scripts are formatted consistently"
-            , run = Some "ci/shfmt.sh"
+            , run = Some "ci/check-shfmt.sh"
             }
           ]
     }

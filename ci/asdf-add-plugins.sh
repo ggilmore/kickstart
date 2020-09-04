@@ -15,7 +15,6 @@ OTHER_PACKAGES=(
   "shfmt"
   "fd"
   "yarn"
-  "yq"
 )
 
 for package in "${OTHER_PACKAGES[@]}"; do

@@ -1,28 +1,32 @@
-build: render-ci-pipeline format lint
+all: build format lint
+
+build: render-ci-pipeline
 
 render-ci-pipeline:
-    dhall-to-yaml --file ci/dhall/workflow.dhall --output ".github/workflows/ci.yaml" --generated-comment
+    ./scripts/render-ci-pipeline.sh
 
 format: format-dhall prettier format-shfmt
 
-lint: format lint-dhall shellcheck
+lint: lint-dhall shellcheck
 
 prettier:
     yarn run prettier
 
 format-dhall:
-    ./scripts/format.sh
+    ./scripts/dhall-format.sh
 
 lint-dhall:
-    ./scripts/lint.sh
+    ./scripts/dhall-lint.sh
 
 shellcheck:
-    ./ci/shellcheck.sh
+    ./scripts/shellcheck.sh
 
 format-shfmt:
     shfmt -w .
 
-install: install-asdf install-yarn
+install:
+    just install-asdf
+    just install-yarn
 
 install-yarn:
     yarn

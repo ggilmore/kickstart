@@ -3,6 +3,6 @@
 cd "$(dirname "${BASH_SOURCE[0]}")"/..
 set -euxo pipefail
 
-just build
+just all
 
 git diff --exit-code .github/workflows/ci.yaml

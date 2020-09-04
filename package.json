@@ -3,9 +3,9 @@
     "prettier": "prettier '**/{*.{js?(on),ts?(x),y?(a)ml,graphql,md,scss,toml},.*.js?(on)}' --write --list-different",
     "prettier-check": "yarn -s run prettier --write=false"
   },
-  "name": "ds-to-dhall",
+  "name": "kickstart",
   "version": "dev",
-  "repository": "git@github.com:sourcegraph/ds-to-dhall.git",
+  "repository": "git@github.com:ggilmore/kickstart.git",
   "author": "Geoffrey Gilmore <ggilmore@mit.edu>",
   "license": "MIT",
   "devDependencies": {
