@@ -37,7 +37,7 @@ Kickstart is my personal template repository that bootstaps:
 - just
   - `asdf plugin-add just https://github.com/ggilmore/asdf-just.git`
 
-1. Run `asdf install` to install all the tools specified in [.tool-versions](./tool-versions)
+1. Run `asdf install` to install all the tools specified in [.tool-versions](./.tool-versions)
 1. Run `just install` to install all the packages
 
 # Usage
