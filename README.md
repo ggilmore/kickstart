@@ -9,6 +9,7 @@ Kickstart is my personal template repository that bootstaps:
   - [`shfmt`](https://github.com/mvdan/sh): https://github.com/mvdan/sh
   - [`prettier`](https://prettier.io/): https://prettier.io/
 - A Github Actions CI pipeline powered by [dhall](https://dhall-lang.org/) that enforces all of the above
+- `deno` to assist with writing scripts that would be too messy for bash
 
 # Dependencies
 
@@ -28,6 +29,8 @@ Kickstart is my personal template repository that bootstaps:
   - `asdf plugin-add fd`
 - yarn
   - `asdf plugin-add yarn`
+- deno
+  - `asdf plugin-add deno`
 - node
   - ```bash
     # https://github.com/asdf-vm/asdf-nodejs#install
