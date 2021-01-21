@@ -15,6 +15,7 @@ OTHER_PACKAGES=(
   "shfmt"
   "fd"
   "yarn"
+  "deno"
 )
 
 for package in "${OTHER_PACKAGES[@]}"; do
