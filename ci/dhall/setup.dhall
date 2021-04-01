@@ -31,4 +31,17 @@ let Job =
         with steps = Some SetupSteps
       }
 
-in  { SetupSteps, Job }
+let JobArgs =
+      { Type = { name : Text, additionalSteps : List GitHubActions.Step.Type }
+      , default = {=}
+      }
+
+let MakeJob
+    : ∀(args : JobArgs.Type) → Job.Type
+    = λ(args : JobArgs.Type) →
+        Job::{
+        , name = Some args.name
+        , steps = SetupSteps # args.additionalSteps
+        }
+
+in  { SetupSteps, Job, ASDFSteps, MakeJob, JobArgs }
