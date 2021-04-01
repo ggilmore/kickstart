@@ -4,11 +4,11 @@ let Setup = ../setup.dhall
 
 in  Setup.MakeJob
       Setup.JobArgs::{
-      , name = "shellcheck"
+      , name = "dhall-check"
       , additionalSteps =
         [ GitHubActions.Step::{
-          , name = Some "Lint shell scripts"
-          , run = Some "just shellcheck"
+          , name = Some "Check that all dhall files typecheck"
+          , run = Some "just check-dhall"
           }
         ]
       }
