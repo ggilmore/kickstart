@@ -5,6 +5,8 @@ build: render-ci-pipeline
 render-ci-pipeline:
     ./scripts/render-ci-pipeline.sh
 
+fmt: format
+
 format: format-dhall prettier format-shfmt
 
 lint: lint-dhall shellcheck
