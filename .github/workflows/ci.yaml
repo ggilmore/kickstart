@@ -2,7 +2,7 @@
 jobs:
   checkPipeline:
     name: render-CI-pipeline
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
     steps:
       - uses: 'actions/checkout@v2'
       - name: Install asdf
@@ -15,7 +15,7 @@ jobs:
         run: ci/check-rendered-pipeline-up-to-date.sh
   dhallCheck:
     name: dhall-check
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
     steps:
       - uses: 'actions/checkout@v2'
       - name: Install asdf
@@ -28,7 +28,7 @@ jobs:
         run: just check-dhall
   dhallFormat:
     name: dhall-format
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
     steps:
       - uses: 'actions/checkout@v2'
       - name: Install asdf
@@ -43,7 +43,7 @@ jobs:
         run: just format-dhall
   dhallLint:
     name: dhall-lint
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
     steps:
       - uses: 'actions/checkout@v2'
       - name: Install asdf
@@ -58,7 +58,7 @@ jobs:
         run: just lint-dhall
   prettier:
     name: Prettier formatting
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
     steps:
       - uses: 'actions/checkout@v2'
       - name: Install asdf
@@ -71,7 +71,7 @@ jobs:
         run: ci/check-prettier.sh
   shellcheck:
     name: shellcheck
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
     steps:
       - uses: 'actions/checkout@v2'
       - name: Install asdf
@@ -84,7 +84,7 @@ jobs:
         run: just shellcheck
   shfmt:
     name: shfmt
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
     steps:
       - uses: 'actions/checkout@v2'
       - name: Install asdf
